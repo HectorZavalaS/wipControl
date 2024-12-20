@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16BF56D0-0770-41EC-8B3E-006059418A88}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>stocktake_V4</RootNamespace>
+    <AssemblyName>wipControl</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\jhernandezg\Desktop\Stocktake\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoTrans.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A8E30FCF78E667E55ABB71733A4666FC24E88716</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>stocktake_V4_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.3.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.3.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=AMD64">
+      <HintPath>..\packages\IBM.Data.DB.Provider.11.5.4000.4\lib\net451\x64\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>Libs\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.5\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.9.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\base64.cs" />
+    <Compile Include="Class\CAlert.cs" />
+    <Compile Include="Class\CCogiscan.cs" />
+    <Compile Include="Class\CCogiscanCGS.cs" />
+    <Compile Include="Class\CCogiscanCGSDW.cs" />
+    <Compile Include="Class\CModelInfo.cs" />
+    <Compile Include="Class\COracle.cs" />
+    <Compile Include="Class\CPrint.cs" />
+    <Compile Include="Class\CReleaseInfo.cs" />
+    <Compile Include="Class\CSimosUser.cs" />
+    <Compile Include="Class\CUtils.cs" />
+    <Compile Include="Class\CWMI.cs" />
+    <Compile Include="Class\CZone.cs" />
+    <Compile Include="Class\DataGridViewProgressCell.cs" />
+    <Compile Include="Class\DataGridViewProgressColumn.cs" />
+    <Compile Include="Class\excel.cs" />
+    <Compile Include="Class\RawPrinterHelper.cs" />
+    <Compile Include="Class\SimpleAsyncResult.cs" />
+    <Compile Include="Class\TextProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Connected Services\wsCogiscan\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DlgDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgDelete.Designer.cs">
+      <DependentUpon>DlgDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgFinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgFinance.Designer.cs">
+      <DependentUpon>dlgFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMessage.Designer.cs">
+      <DependentUpon>dlgMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSheet.Designer.cs">
+      <DependentUpon>FormSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\deleteLabel_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\existsLabel_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDjbySerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelInfoMI_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelInfoST_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelSTSMT_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelSTV2_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelST_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastFiveFin_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastFiveScan_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastFive_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastQtyByUser_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLevelProfile_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLocators_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLocLbls_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMagazines_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSemiFGByModel_Result.cs">
+      <DependentUpon>siixsem_wip_config_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSemifinishByModel_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSemiManuByModel_Result.cs">
+      <DependentUpon>siixsem_wip_config_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSemiSMTByModel_Result.cs">
+      <DependentUpon>siixsem_wip_config_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSemiSMTTByModel_Result.cs">
+      <DependentUpon>siixsem_wip_config_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSerialSemPen_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getTotCount_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getUserZone_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getWipZonByIDArea_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getZonesQty_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getZones_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertLabel_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertLabel_V2_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isPlus3Months_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_stocktake_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_stocktake_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_stocktake_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_stocktake_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_stocktake_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_wip_config_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_wip_config_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_wip_config_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_wip_config_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_wip_config_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_wip_config_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updateCheckedV2_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updateChecked_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updateFinChecked_Result.cs">
+      <DependentUpon>siixsem_stocktake_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\validate_user_Result.cs">
+      <DependentUpon>siixsem_main_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notInWip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notInWip.Designer.cs">
+      <DependentUpon>notInWip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scan.Designer.cs">
+      <DependentUpon>scan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="SplashScreenFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenFrm.designer.cs">
+      <DependentUpon>SplashScreenFrm.cs</DependentUpon>
+    </Compile>
+    <Content Include="Images\back3.jpg" />
+    <Content Include="Images\quarantine.png" />
+    <Content Include="Models\siixsem_wip_config_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_wip_config_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_wip_config_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_wip_config_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_wip_config_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_wip_config_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sounds\success.wav" />
+    <Content Include="Sounds\warning.wav" />
+    <EmbeddedResource Include="DlgDelete.resx">
+      <DependentUpon>DlgDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgFinance.resx">
+      <DependentUpon>dlgFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMessage.resx">
+      <DependentUpon>dlgMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSheet.resx">
+      <DependentUpon>FormSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notInWip.resx">
+      <DependentUpon>notInWip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="scan.resx">
+      <DependentUpon>scan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenFrm.resx">
+      <DependentUpon>SplashScreenFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\wsCogiscan\RPCServices.wsdl" />
+    <Content Include="Images\back.jpg" />
+    <Content Include="Images\back2.jpg" />
+    <None Include="Images\back2.png" />
+    <Content Include="Images\backHeader.jpg" />
+    <Content Include="Images\circuit.png" />
+    <Content Include="Images\logoTrans.ico" />
+    <Content Include="Images\logoTrans.png" />
+    <Content Include="logoTrans.ico" />
+    <Content Include="Models\siixsem_main_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_main_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_main_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_main_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_main_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_main_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_stocktake_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>siixsem_stocktake_db.Context.cs</LastGenOutput>
+      <DependentUpon>siixsem_stocktake_db.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\siixsem_stocktake_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_stocktake_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_stocktake_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_sys_lblPrint_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_sys_lblPrint_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_sys_lblPrint_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_sys_lblPrint_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\siixsem_stocktake_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_stocktake_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Models\siixsem_main_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_main_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\siixsem_main_db.edmx.diagram">
+      <DependentUpon>siixsem_main_db.edmx</DependentUpon>
+    </None>
+    <None Include="Models\siixsem_stocktake_db.edmx.diagram">
+      <DependentUpon>siixsem_stocktake_db.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\siixsem_sys_lblPrint_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_sys_lblPrint_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\siixsem_sys_lblPrint_db.edmx.diagram">
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\siixsem_wip_config_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_wip_config_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\siixsem_wip_config_db.edmx.diagram">
+      <DependentUpon>siixsem_wip_config_db.edmx</DependentUpon>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="stocktake_V4_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\wsCogiscan\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsCogiscan\configuration.svcinfo" />
+    <None Include="Connected Services\wsCogiscan\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\wsCogiscan\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\IBM.Data.DB.Provider.11.5.4000.4\build\IBM.Data.DB.Provider.targets" Condition="Exists('..\packages\IBM.Data.DB.Provider.11.5.4000.4\build\IBM.Data.DB.Provider.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\IBM.Data.DB.Provider.11.5.4000.4\build\IBM.Data.DB.Provider.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IBM.Data.DB.Provider.11.5.4000.4\build\IBM.Data.DB.Provider.targets'))" />
+  </Target>
+</Project>

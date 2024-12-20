@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="siixsem_stocktake_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="deleteLabel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="barcode" Type="nvarchar" Mode="In" />
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="existsHallway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mag" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="existsLabel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="serial" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="existsMag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mag" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelInfoMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelInfoST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+          <Parameter Name="printer" Type="int" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLabelSTR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="location" Type="nvarchar" Mode="In" />
+          <Parameter Name="scanned" Type="nvarchar" Mode="In" />
+          <Parameter Name="count" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelSTR_Gen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="location" Type="nvarchar" Mode="In" />
+          <Parameter Name="scanned" Type="nvarchar" Mode="In" />
+          <Parameter Name="count" Type="nvarchar" Mode="In" />
+          <Parameter Name="zpl" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="getLabelSTSMT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+          <Parameter Name="printer" Type="int" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+          <Parameter Name="area" Type="nvarchar" Mode="In" />
+          <Parameter Name="quar" Type="int" Mode="In" />
+          <Parameter Name="rev" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLabelSTV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+          <Parameter Name="printer" Type="int" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+          <Parameter Name="area" Type="nvarchar" Mode="In" />
+          <Parameter Name="quar" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLastFive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLastFiveFin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLastFiveScan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLastQtyByDJ" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getLastQtyByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idU" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLevelProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="group_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLocators" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getLocLbls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstLoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getMagazines" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getSemifinishByModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getSerialSemPen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getSubCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="location" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getTotCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="location" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getUserZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getWipZonByIDArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArea" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getZones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getZonesQty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="insertHallway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hallway" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertLabel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idU" Type="int" Mode="In" />
+          <Parameter Name="serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+          <Parameter Name="quar" Type="int" Mode="In" />
+          <Parameter Name="idArea" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertLabel_V2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idU" Type="int" Mode="In" />
+          <Parameter Name="serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+          <Parameter Name="quar" Type="int" Mode="In" />
+          <Parameter Name="idArea" Type="int" Mode="In" />
+          <Parameter Name="qrMag" Type="nvarchar" Mode="In" />
+          <Parameter Name="qrLoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="rev" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertLabelMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idU" Type="int" Mode="In" />
+          <Parameter Name="serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+          <Parameter Name="cgsroute" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="nvarchar" Mode="In" />
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="mag" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertMag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mag" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateChecked" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateCheckedMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateCheckedPrintMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateCheckedPrintST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateCheckedV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateFinChecked" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qr" Type="nvarchar" Mode="In" />
+          <Parameter Name="idUser" Type="int" Mode="In" />
+          <Parameter Name="qty" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateLastQtyByDJ" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dj" Type="nvarchar" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateLastQtyByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idU" Type="int" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateLblMagMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+          <Parameter Name="newLbl" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateLblMagST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+          <Parameter Name="newLbl" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateQtyMagMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateQtyMagST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="label" Type="nvarchar" Mode="In" />
+          <Parameter Name="qty" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateSemifinish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="djGroup" Type="nvarchar" Mode="In" />
+          <Parameter Name="semi" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="siixsem_stocktake_dbModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="siixsem_stocktake_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="siixsem_stocktake_dbEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="getLabelInfoMI" ReturnType="Collection(siixsem_stocktake_dbModel.getLabelInfoMI_Result)">
+          <Parameter Name="label" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelInfoST" ReturnType="Collection(siixsem_stocktake_dbModel.getLabelInfoST_Result)">
+          <Parameter Name="label" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelMI" ReturnType="Collection(String)">
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelST" ReturnType="Collection(siixsem_stocktake_dbModel.getLabelST_Result)">
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+            <Parameter Name="printer" Mode="In" Type="Int32" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelSTR" ReturnType="Collection(String)">
+            <Parameter Name="location" Mode="In" Type="String" />
+            <Parameter Name="scanned" Mode="In" Type="String" />
+            <Parameter Name="count" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelSTR_Gen">
+            <Parameter Name="location" Mode="In" Type="String" />
+            <Parameter Name="scanned" Mode="In" Type="String" />
+            <Parameter Name="count" Mode="In" Type="String" />
+            <Parameter Name="zpl" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLastQtyByDJ" ReturnType="Collection(Int32)">
+          <Parameter Name="dj" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLastQtyByUser" ReturnType="Collection(siixsem_stocktake_dbModel.getLastQtyByUser_Result)">
+          <Parameter Name="idU" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLocLbls" ReturnType="Collection(siixsem_stocktake_dbModel.getLocLbls_Result)">
+          <Parameter Name="firstLoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getSerialSemPen" ReturnType="Collection(siixsem_stocktake_dbModel.getSerialSemPen_Result)">
+          <Parameter Name="fecha" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getSubCount" ReturnType="Collection(Int32)">
+          <Parameter Name="location" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getTotCount" ReturnType="Collection(siixsem_stocktake_dbModel.getTotCount_Result)">
+          <Parameter Name="location" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getUserZone" ReturnType="Collection(siixsem_stocktake_dbModel.getUserZone_Result)">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertLabel" ReturnType="Collection(siixsem_stocktake_dbModel.insertLabel_Result)">
+            <Parameter Name="idU" Mode="In" Type="Int32" />
+            <Parameter Name="serial" Mode="In" Type="String" />
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+            <Parameter Name="quar" Mode="In" Type="Int32" />
+            <Parameter Name="idArea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertLabelMI" ReturnType="Collection(Int32)">
+            <Parameter Name="idU" Mode="In" Type="Int32" />
+            <Parameter Name="serial" Mode="In" Type="String" />
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateChecked" ReturnType="Collection(siixsem_stocktake_dbModel.updateChecked_Result)">
+          <Parameter Name="qr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateCheckedMI" ReturnType="Collection(Int32)">
+          <Parameter Name="qr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateCheckedPrintMI" ReturnType="Collection(Int32)">
+          <Parameter Name="qr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateCheckedPrintST" ReturnType="Collection(Int32)">
+          <Parameter Name="qr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateLastQtyByDJ" ReturnType="Collection(Int32)">
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="count" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateLastQtyByUser" ReturnType="Collection(Int32)">
+            <Parameter Name="idU" Mode="In" Type="Int32" />
+            <Parameter Name="count" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateLblMagMI" ReturnType="Collection(Int32)">
+            <Parameter Name="label" Mode="In" Type="String" />
+            <Parameter Name="newLbl" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateLblMagST" ReturnType="Collection(Int32)">
+            <Parameter Name="label" Mode="In" Type="String" />
+            <Parameter Name="newLbl" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateQtyMagMI" ReturnType="Collection(Int32)">
+            <Parameter Name="label" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateQtyMagST" ReturnType="Collection(Int32)">
+            <Parameter Name="label" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateSemifinish" ReturnType="Collection(Int32)">
+            <Parameter Name="serial" Mode="In" Type="String" />
+            <Parameter Name="djGroup" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLastFive" ReturnType="Collection(siixsem_stocktake_dbModel.getLastFive_Result)">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLastFiveScan" ReturnType="Collection(siixsem_stocktake_dbModel.getLastFiveScan_Result)">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateCheckedV2" ReturnType="Collection(siixsem_stocktake_dbModel.updateCheckedV2_Result)">
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getZonesQty" ReturnType="Collection(siixsem_stocktake_dbModel.getZonesQty_Result)" />
+          <FunctionImport Name="deleteLabel" ReturnType="Collection(siixsem_stocktake_dbModel.deleteLabel_Result)">
+            <Parameter Name="barcode" Mode="In" Type="String" />
+            <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="existsLabel" ReturnType="Collection(siixsem_stocktake_dbModel.existsLabel_Result)">
+          <Parameter Name="serial" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getZones" ReturnType="Collection(siixsem_stocktake_dbModel.getZones_Result)" />
+          <FunctionImport Name="getLevelProfile" ReturnType="Collection(siixsem_stocktake_dbModel.getLevelProfile_Result)">
+          <Parameter Name="group_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getWipZonByIDArea" ReturnType="Collection(siixsem_stocktake_dbModel.getWipZonByIDArea_Result)">
+          <Parameter Name="IdArea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelSTV2" ReturnType="Collection(siixsem_stocktake_dbModel.getLabelSTV2_Result)">
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+            <Parameter Name="printer" Mode="In" Type="Int32" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="area" Mode="In" Type="String" />
+            <Parameter Name="quar" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="existsHallway">
+          <Parameter Name="Mag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="existsMag">
+          <Parameter Name="Mag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertHallway">
+          <Parameter Name="hallway" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertMag">
+          <Parameter Name="Mag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertLabel_V2" ReturnType="Collection(siixsem_stocktake_dbModel.insertLabel_V2_Result)">
+            <Parameter Name="idU" Mode="In" Type="Int32" />
+            <Parameter Name="serial" Mode="In" Type="String" />
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+            <Parameter Name="quar" Mode="In" Type="Int32" />
+            <Parameter Name="idArea" Mode="In" Type="Int32" />
+            <Parameter Name="qrMag" Mode="In" Type="String" />
+            <Parameter Name="qrLoc" Mode="In" Type="String" />
+            <Parameter Name="rev" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getLabelSTSMT" ReturnType="Collection(siixsem_stocktake_dbModel.getLabelSTSMT_Result)">
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="dj" Mode="In" Type="String" />
+            <Parameter Name="semi" Mode="In" Type="String" />
+            <Parameter Name="cgsroute" Mode="In" Type="String" />
+            <Parameter Name="qty" Mode="In" Type="String" />
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="mag" Mode="In" Type="String" />
+            <Parameter Name="printer" Mode="In" Type="Int32" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="area" Mode="In" Type="String" />
+            <Parameter Name="quar" Mode="In" Type="Int32" />
+            <Parameter Name="rev" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateFinChecked" ReturnType="Collection(siixsem_stocktake_dbModel.updateFinChecked_Result)">
+            <Parameter Name="qr" Mode="In" Type="String" />
+            <Parameter Name="idUser" Mode="In" Type="Int32" />
+            <Parameter Name="qty" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLastFiveFin" ReturnType="Collection(siixsem_stocktake_dbModel.getLastFiveFin_Result)">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLocators" ReturnType="Collection(siixsem_stocktake_dbModel.getLocators_Result)" />
+          <FunctionImport Name="getMagazines" ReturnType="Collection(siixsem_stocktake_dbModel.getMagazines_Result)" />
+          <FunctionImport Name="getSemifinishByModel" ReturnType="Collection(siixsem_stocktake_dbModel.getSemifinishByModel_Result)">
+            <Parameter Name="model" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getLabelInfoMI_Result">
+          <Property Type="Int32" Name="se_id_label" Nullable="false" />
+          <Property Type="Int32" Name="se_id_user" Nullable="false" />
+          <Property Type="String" Name="se_serial_read" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_magazine" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="se_model" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_dj_group" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="se_semifinish" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="se_qty" Nullable="false" />
+          <Property Type="String" Name="se_cgs_route" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_barcode" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="se_date" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="se_checked" Nullable="false" />
+          <Property Type="Int32" Name="se_checkPrint" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLabelInfoST_Result">
+          <Property Type="Int32" Name="se_id_label" Nullable="false" />
+          <Property Type="Int32" Name="se_id_user" Nullable="false" />
+          <Property Type="String" Name="se_serial_read" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_magazine" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="se_model" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_dj_group" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="se_semifinish" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="se_qty" Nullable="false" />
+          <Property Type="String" Name="se_cgs_route" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_barcode" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="se_date" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="se_checked" Nullable="false" />
+          <Property Type="Int32" Name="se_checkPrint" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLocLbls_Result">
+          <Property Type="String" Name="LOC" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CANTR" Nullable="true" />
+          <Property Type="Int32" Name="CATW" Nullable="true" />
+          <Property Type="String" Name="SCANNED_BY" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ZPL" Nullable="true" MaxLength="3000" />
+        </ComplexType>
+        <ComplexType Name="getTotCount_Result">
+          <Property Type="Int32" Name="CANT" Nullable="true" />
+          <Property Type="String" Name="SCANNED_BY" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="getUserZone_Result">
+          <Property Type="String" Name="RESULT" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getLastQtyByUser_Result">
+          <Property Type="Int32" Name="COUNTLBL" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getLabelST_Result">
+          <Property Type="String" Name="label" Nullable="true" MaxLength="1700" />
+        </ComplexType>
+        <ComplexType Name="insertLabel_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="updateChecked_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLastFive_Result">
+          <Property Type="String" Name="MODEL" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DJ_GROUP" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="MAGAZINE" Nullable="false" MaxLength="15" />
+          <Property Type="Int32" Name="QTY" Nullable="false" />
+          <Property Type="DateTime" Name="DATE" Nullable="false" Precision="23" />
+          <Property Type="String" Name="BARCODE" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="getSerialSemPen_Result">
+          <Property Type="String" Name="se_serial_read" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getLastFiveScan_Result">
+          <Property Type="String" Name="BARCODE" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="QTY" Nullable="false" />
+          <Property Type="String" Name="DJ_GROUP" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="MODEL" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="USER_READ" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="DATE_READ" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="updateCheckedV2_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getZonesQty_Result">
+          <Property Type="String" Name="ZONE" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="COUNT" Nullable="true" />
+          <Property Type="Int32" Name="TOTAL" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="deleteLabel_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="existsLabel_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getZones_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AREA" Nullable="false" MaxLength="62" />
+        </ComplexType>
+        <ComplexType Name="getLevelProfile_Result">
+          <Property Type="Int32" Name="LEVEL" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getWipZonByIDArea_Result">
+          <Property Type="String" Name="WIP_ZONE" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="AREA" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getLabelSTV2_Result">
+          <Property Type="String" Name="label" Nullable="true" MaxLength="1700" />
+        </ComplexType>
+        <ComplexType Name="insertLabel_V2_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLabelSTSMT_Result">
+          <Property Type="String" Name="label" Nullable="true" MaxLength="1700" />
+        </ComplexType>
+        <ComplexType Name="updateFinChecked_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLastFiveFin_Result">
+          <Property Type="String" Name="BARCODE" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="MAGAZINE" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="MODEL" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DJ_GROUP" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="FIN_QTY" Nullable="false" />
+          <Property Type="DateTime" Name="FIN_DATE" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="PROD_QTY" Nullable="false" />
+          <Property Type="String" Name="VALIDATED_BY_QA" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="USER_VALIDATE" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DATE_VALIDATED" Nullable="true" Precision="23" />
+          </ComplexType>
+        <ComplexType Name="getLocators_Result">
+          <Property Type="Int32" Name="ID_LOCATOR" Nullable="false" />
+          <Property Type="String" Name="DESCRIPTION" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="getMagazines_Result">
+          <Property Type="String" Name="DESCRIPTION" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="ID_MAG" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getSemifinishByModel_Result">
+          <Property Type="String" Name="MODEL_NAME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="SEMIFINISH" Nullable="false" MaxLength="150" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="siixsem_stocktake_dbModelStoreContainer" CdmEntityContainer="siixsem_stocktake_dbEntities" >
+          <FunctionImportMapping FunctionImportName="getLabelInfoMI" FunctionName="siixsem_stocktake_dbModel.Store.getLabelInfoMI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLabelInfoMI_Result">
+                <ScalarProperty Name="se_id_label" ColumnName="se_id_label" />
+                <ScalarProperty Name="se_id_user" ColumnName="se_id_user" />
+                <ScalarProperty Name="se_serial_read" ColumnName="se_serial_read" />
+                <ScalarProperty Name="se_magazine" ColumnName="se_magazine" />
+                <ScalarProperty Name="se_model" ColumnName="se_model" />
+                <ScalarProperty Name="se_dj_group" ColumnName="se_dj_group" />
+                <ScalarProperty Name="se_semifinish" ColumnName="se_semifinish" />
+                <ScalarProperty Name="se_qty" ColumnName="se_qty" />
+                <ScalarProperty Name="se_cgs_route" ColumnName="se_cgs_route" />
+                <ScalarProperty Name="se_barcode" ColumnName="se_barcode" />
+                <ScalarProperty Name="se_date" ColumnName="se_date" />
+                <ScalarProperty Name="se_checked" ColumnName="se_checked" />
+                <ScalarProperty Name="se_checkPrint" ColumnName="se_checkPrint" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLabelInfoST" FunctionName="siixsem_stocktake_dbModel.Store.getLabelInfoST">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLabelInfoST_Result">
+                <ScalarProperty Name="se_id_label" ColumnName="se_id_label" />
+                <ScalarProperty Name="se_id_user" ColumnName="se_id_user" />
+                <ScalarProperty Name="se_serial_read" ColumnName="se_serial_read" />
+                <ScalarProperty Name="se_magazine" ColumnName="se_magazine" />
+                <ScalarProperty Name="se_model" ColumnName="se_model" />
+                <ScalarProperty Name="se_dj_group" ColumnName="se_dj_group" />
+                <ScalarProperty Name="se_semifinish" ColumnName="se_semifinish" />
+                <ScalarProperty Name="se_qty" ColumnName="se_qty" />
+                <ScalarProperty Name="se_cgs_route" ColumnName="se_cgs_route" />
+                <ScalarProperty Name="se_barcode" ColumnName="se_barcode" />
+                <ScalarProperty Name="se_date" ColumnName="se_date" />
+                <ScalarProperty Name="se_checked" ColumnName="se_checked" />
+                <ScalarProperty Name="se_checkPrint" ColumnName="se_checkPrint" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLabelMI" FunctionName="siixsem_stocktake_dbModel.Store.getLabelMI" />
+          <FunctionImportMapping FunctionImportName="getLabelST" FunctionName="siixsem_stocktake_dbModel.Store.getLabelST" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLabelST_Result">
+                <ScalarProperty Name="label" ColumnName="label" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLabelSTR" FunctionName="siixsem_stocktake_dbModel.Store.getLabelSTR" />
+          <FunctionImportMapping FunctionImportName="getLabelSTR_Gen" FunctionName="siixsem_stocktake_dbModel.Store.getLabelSTR_Gen" />
+          <FunctionImportMapping FunctionImportName="getLastQtyByDJ" FunctionName="siixsem_stocktake_dbModel.Store.getLastQtyByDJ" />
+          <FunctionImportMapping FunctionImportName="getLastQtyByUser" FunctionName="siixsem_stocktake_dbModel.Store.getLastQtyByUser" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLastQtyByUser_Result">
+                <ScalarProperty Name="COUNTLBL" ColumnName="COUNTLBL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLocLbls" FunctionName="siixsem_stocktake_dbModel.Store.getLocLbls">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLocLbls_Result">
+                <ScalarProperty Name="LOC" ColumnName="LOC" />
+                <ScalarProperty Name="CANTR" ColumnName="CANTR" />
+                <ScalarProperty Name="CATW" ColumnName="CATW" />
+                <ScalarProperty Name="SCANNED_BY" ColumnName="SCANNED_BY" />
+                <ScalarProperty Name="ZPL" ColumnName="ZPL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSerialSemPen" FunctionName="siixsem_stocktake_dbModel.Store.getSerialSemPen" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getSerialSemPen_Result">
+                <ScalarProperty Name="se_serial_read" ColumnName="se_serial_read" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSubCount" FunctionName="siixsem_stocktake_dbModel.Store.getSubCount" />
+          <FunctionImportMapping FunctionImportName="getTotCount" FunctionName="siixsem_stocktake_dbModel.Store.getTotCount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getTotCount_Result">
+                <ScalarProperty Name="CANT" ColumnName="CANT" />
+                <ScalarProperty Name="SCANNED_BY" ColumnName="SCANNED_BY" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUserZone" FunctionName="siixsem_stocktake_dbModel.Store.getUserZone" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getUserZone_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="insertLabel" FunctionName="siixsem_stocktake_dbModel.Store.insertLabel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.insertLabel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="insertLabelMI" FunctionName="siixsem_stocktake_dbModel.Store.insertLabelMI" />
+          <FunctionImportMapping FunctionImportName="updateChecked" FunctionName="siixsem_stocktake_dbModel.Store.updateChecked" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.updateChecked_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateCheckedMI" FunctionName="siixsem_stocktake_dbModel.Store.updateCheckedMI" />
+          <FunctionImportMapping FunctionImportName="updateCheckedPrintMI" FunctionName="siixsem_stocktake_dbModel.Store.updateCheckedPrintMI" />
+          <FunctionImportMapping FunctionImportName="updateCheckedPrintST" FunctionName="siixsem_stocktake_dbModel.Store.updateCheckedPrintST" />
+          <FunctionImportMapping FunctionImportName="updateLastQtyByDJ" FunctionName="siixsem_stocktake_dbModel.Store.updateLastQtyByDJ" />
+          <FunctionImportMapping FunctionImportName="updateLastQtyByUser" FunctionName="siixsem_stocktake_dbModel.Store.updateLastQtyByUser" />
+          <FunctionImportMapping FunctionImportName="updateLblMagMI" FunctionName="siixsem_stocktake_dbModel.Store.updateLblMagMI" />
+          <FunctionImportMapping FunctionImportName="updateLblMagST" FunctionName="siixsem_stocktake_dbModel.Store.updateLblMagST" />
+          <FunctionImportMapping FunctionImportName="updateQtyMagMI" FunctionName="siixsem_stocktake_dbModel.Store.updateQtyMagMI" />
+          <FunctionImportMapping FunctionImportName="updateQtyMagST" FunctionName="siixsem_stocktake_dbModel.Store.updateQtyMagST" />
+          <FunctionImportMapping FunctionImportName="updateSemifinish" FunctionName="siixsem_stocktake_dbModel.Store.updateSemifinish" />
+          <FunctionImportMapping FunctionImportName="getLastFive" FunctionName="siixsem_stocktake_dbModel.Store.getLastFive">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLastFive_Result">
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="DJ_GROUP" ColumnName="DJ_GROUP" />
+                <ScalarProperty Name="MAGAZINE" ColumnName="MAGAZINE" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLastFiveScan" FunctionName="siixsem_stocktake_dbModel.Store.getLastFiveScan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLastFiveScan_Result">
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="DJ_GROUP" ColumnName="DJ_GROUP" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="USER_READ" ColumnName="USER_READ" />
+                <ScalarProperty Name="DATE_READ" ColumnName="DATE_READ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateCheckedV2" FunctionName="siixsem_stocktake_dbModel.Store.updateCheckedV2" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.updateCheckedV2_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getZonesQty" FunctionName="siixsem_stocktake_dbModel.Store.getZonesQty">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getZonesQty_Result">
+                <ScalarProperty Name="ZONE" ColumnName="ZONE" />
+                <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="deleteLabel" FunctionName="siixsem_stocktake_dbModel.Store.deleteLabel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.deleteLabel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="existsLabel" FunctionName="siixsem_stocktake_dbModel.Store.existsLabel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.existsLabel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getZones" FunctionName="siixsem_stocktake_dbModel.Store.getZones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getZones_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLevelProfile" FunctionName="siixsem_stocktake_dbModel.Store.getLevelProfile" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLevelProfile_Result">
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getWipZonByIDArea" FunctionName="siixsem_stocktake_dbModel.Store.getWipZonByIDArea" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getWipZonByIDArea_Result">
+                <ScalarProperty Name="WIP_ZONE" ColumnName="WIP_ZONE" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLabelSTV2" FunctionName="siixsem_stocktake_dbModel.Store.getLabelSTV2" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLabelSTV2_Result">
+                <ScalarProperty Name="label" ColumnName="label" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="existsHallway" FunctionName="siixsem_stocktake_dbModel.Store.existsHallway" />
+          <FunctionImportMapping FunctionImportName="existsMag" FunctionName="siixsem_stocktake_dbModel.Store.existsMag" />
+          <FunctionImportMapping FunctionImportName="insertHallway" FunctionName="siixsem_stocktake_dbModel.Store.insertHallway" />
+          <FunctionImportMapping FunctionImportName="insertMag" FunctionName="siixsem_stocktake_dbModel.Store.insertMag" />
+          <FunctionImportMapping FunctionImportName="insertLabel_V2" FunctionName="siixsem_stocktake_dbModel.Store.insertLabel_V2" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.insertLabel_V2_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLabelSTSMT" FunctionName="siixsem_stocktake_dbModel.Store.getLabelSTSMT" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLabelSTSMT_Result">
+                <ScalarProperty Name="label" ColumnName="label" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateFinChecked" FunctionName="siixsem_stocktake_dbModel.Store.updateFinChecked" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.updateFinChecked_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLastFiveFin" FunctionName="siixsem_stocktake_dbModel.Store.getLastFiveFin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLastFiveFin_Result">
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="MAGAZINE" ColumnName="MAGAZINE" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="DJ_GROUP" ColumnName="DJ_GROUP" />
+                <ScalarProperty Name="FIN_QTY" ColumnName="FIN_QTY" />
+                <ScalarProperty Name="FIN_DATE" ColumnName="FIN_DATE" />
+                <ScalarProperty Name="PROD_QTY" ColumnName="PROD_QTY" />
+                <ScalarProperty Name="VALIDATED_BY_QA" ColumnName="VALIDATED_BY_QA" />
+                <ScalarProperty Name="USER_VALIDATE" ColumnName="USER_VALIDATE" />
+                <ScalarProperty Name="DATE_VALIDATED" ColumnName="DATE_VALIDATED" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLocators" FunctionName="siixsem_stocktake_dbModel.Store.getLocators">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getLocators_Result">
+                <ScalarProperty Name="ID_LOCATOR" ColumnName="ID_LOCATOR" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getMagazines" FunctionName="siixsem_stocktake_dbModel.Store.getMagazines">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getMagazines_Result">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ID_MAG" ColumnName="ID_MAG" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSemifinishByModel" FunctionName="siixsem_stocktake_dbModel.Store.getSemifinishByModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_stocktake_dbModel.getSemifinishByModel_Result">
+                <ScalarProperty Name="MODEL_NAME" ColumnName="MODEL_NAME" />
+                <ScalarProperty Name="SEMIFINISH" ColumnName="SEMIFINISH" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
